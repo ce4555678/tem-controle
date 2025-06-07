@@ -2,6 +2,7 @@ import { Menu, UserCircle, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { memo, useState } from "react";
 import logo from "@/assets/tem-controle.svg";
+import { Link } from "react-router";
 
 const HeaderHomeUi = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,32 +11,34 @@ const HeaderHomeUi = () => {
     <header className="bg-white/80 backdrop-blur-md border-b border-blue-100 sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <div className="w-9 h-9 rounded-lg flex items-center justify-center">
-              {/* <DollarSign className="h-5 w-5 text-white" /> */}
-              <img src={logo} />
+          <Link to={"/"}>
+            <div className="flex items-center space-x-2">
+              <div className="w-9 h-9 rounded-lg flex items-center justify-center">
+                {/* <DollarSign className="h-5 w-5 text-white" /> */}
+                <img src={logo} />
+              </div>
+              <span className="text-xl font-bold text-blue-900">
+                Tem Controle
+              </span>
             </div>
-            <span className="text-xl font-bold text-blue-900">
-              Tem Controle
-            </span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             <a
-              href="#features"
+              href="/#features"
               className="text-blue-700 hover:text-blue-900 font-medium transition-colors"
             >
               Funcionalidades
             </a>
             <a
-              href="#pricing"
+              href="/#pricing"
               className="text-blue-700 hover:text-blue-900 font-medium transition-colors"
             >
               Preços
             </a>
             <a
-              href="#testimonials"
+              href="/#testimonials"
               className="text-blue-700 hover:text-blue-900 font-medium transition-colors"
             >
               Depoimentos
@@ -43,12 +46,14 @@ const HeaderHomeUi = () => {
           </nav>
 
           <div className="flex items-center space-x-4">
-            <Button
-              variant="outline"
-              className="hidden sm:inline-flex border-blue-200 text-blue-700 hover:bg-blue-50"
-            >
-              <UserCircle /> Entrar
-            </Button>
+            <Link to={"/auth/login"}>
+              <Button
+                variant="outline"
+                className="hidden sm:inline-flex border-blue-200 text-blue-700 hover:bg-blue-50"
+              >
+                <UserCircle /> Entrar
+              </Button>
+            </Link>
 
             {/* Mobile Menu Button */}
             <button
@@ -89,12 +94,14 @@ const HeaderHomeUi = () => {
               >
                 Depoimentos
               </a>
-              <Button
-                variant="outline"
-                className="self-start border-blue-200 text-blue-700 hover:bg-blue-50"
-              >
-                <UserCircle /> Entrar
-              </Button>
+              <Link to="/auth/login">
+                <Button
+                  variant="outline"
+                  className="self-start border-blue-200 text-blue-700 hover:bg-blue-50"
+                >
+                  <UserCircle /> Entrar
+                </Button>
+              </Link>
             </nav>
           </div>
         )}

@@ -1,4 +1,4 @@
-import { DollarSign } from "lucide-react";
+import logo from "@/assets/tem-controle.svg";
 
 const FooterHomeUi = () => {
   return (
@@ -7,10 +7,11 @@ const FooterHomeUi = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-blue-500 rounded-lg flex items-center justify-center">
-                <DollarSign className="h-5 w-5 text-white" />
+              <div className="size-9 bg-gradient-to-r from-slate-50 to-slate-100 rounded-lg flex items-center justify-center">
+                {/* <DollarSign className="h-5 w-5 text-white" /> */}
+                <img src={logo} />
               </div>
-              <span className="text-xl font-bold">GestãoPro</span>
+              <span className="text-xl font-bold">Tem Controle</span>
             </div>
             <p className="text-blue-200 text-sm md:text-base">
               A plataforma completa para autônomos que querem crescer.
@@ -78,7 +79,10 @@ const FooterHomeUi = () => {
           </div>
         </div>
         <div className="border-t border-blue-800 mt-6 md:mt-8 pt-6 md:pt-8 text-center text-blue-200 text-sm md:text-base">
-          <p>&copy; 2025 Tem Controle. Todos os direitos reservados.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Tem Controle. Todos os direitos
+            reservados.
+          </p>
         </div>
       </div>
     </footer>

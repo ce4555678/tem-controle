@@ -4,11 +4,16 @@ import "./index.css";
 import Home from "./pages/home.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import { Toaster } from "@/components/ui/sonner";
+import Login from "./pages/auth/login.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/auth/login",
+    element: <Login />,
   },
 ]);
 
