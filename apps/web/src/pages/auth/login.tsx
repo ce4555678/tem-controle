@@ -1,10 +1,12 @@
 import { LoginForm } from "@/components/login-form";
 import financas from "@/assets/financas.png";
 import HomeUi from "@/components/homeUi";
+import Helmet from "@/components/helmet";
 
 export default function Login() {
   return (
     <>
+    <Helmet title="Login"/>
       <HomeUi.header />
       <main className="bg-gradient-to-br from-blue-50 via-white to-blue-50">
         <div className="container mx-auto px-4 py-4 md:py-6 lg:py-8">
